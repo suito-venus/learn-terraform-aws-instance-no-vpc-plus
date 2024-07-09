@@ -4,7 +4,7 @@ resource "aws_vpc" "learn-terraform-aws-instance-vpc" {
   enable_dns_support = true
   instance_tenancy = "default"
   tags = {
-    "Name" : "${var.vpc-name}"
+    "Name" : var.vpc-name
   }
 }
 
@@ -23,7 +23,7 @@ resource "aws_route_table" "learn-terraform-aws-instance-route-table" {
 resource "aws_subnet" "learn-terraform-aws-instance-subnet-a" {
   vpc_id = aws_vpc.learn-terraform-aws-instance-vpc.id
   cidr_block = "192.168.1.0/24"
-  availability_zone = "${var.az-a}"
+  availability_zone = var.az-a
   map_public_ip_on_launch = true
 }
 
@@ -35,7 +35,7 @@ resource "aws_route_table_association" "learn-terraform-aws-instance-route-table
 resource "aws_subnet" "learn-terraform-aws-instance-subnet-c" {
   vpc_id = aws_vpc.learn-terraform-aws-instance-vpc.id
   cidr_block = "192.168.2.0/24"
-  availability_zone = "${var.az-c}"
+  availability_zone = var.az-c
   map_public_ip_on_launch = true
 }
 
