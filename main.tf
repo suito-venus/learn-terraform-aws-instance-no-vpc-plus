@@ -1,4 +1,6 @@
 terraform {
+  backend "s3"{
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -12,8 +14,8 @@ provider "aws" {
   region  = "ap-northeast-1"
   default_tags {
     tags = {
-      "Cost" : "suito"
-      "Project" : "learn-terraform-aws-ec2-instance"
+      "Cost" : var.cost_tag_value
+      "Project" : var.project_name
     }
   }
 }

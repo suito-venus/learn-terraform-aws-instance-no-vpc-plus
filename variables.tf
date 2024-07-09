@@ -1,23 +1,31 @@
+variable "project_name" {
+  default = "learn-terraform-aws-ec2-instance"
+}
+
+variable "cost_tag_value"{
+  default = "cost-responsible-dept-or-username"
+}
+
 variable "region" {
   default = "ap-northeast-1"
-}
-
-variable "az-a" {
-  default = "ap-northeast-1a"
-}
-
-variable "az-c" {
-  default = "ap-northeast-1c"
-}
-
-variable "vpc-name" {
-  default = "learn-terraform-aws-instance-vpc"
 }
 
 variable "allowed_cidr" {
   default = null
 }
 
-variable "ec2-key-name" {
-  default = "learn-terraform-aws-instance-keypair"
+locals {
+  az-a = "${var.region}a"
+}
+
+locals  {
+  az-c = "${var.region}c"
+}
+
+locals {
+  vpc-name = "${var.project_name}-vpc"
+}
+
+locals {
+  ec2-key-name = "${var.project_name}-keypair"
 }
