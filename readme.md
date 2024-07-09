@@ -21,7 +21,7 @@ Like below.
 
 ```bash
 export TF_VAR_project_name="learn-terraform-aws-ec2-instance"
-export TF_VAR_cost_tag_value="cost-responcible-username"
+export TF_VAR_cost_tag_value="cost-responsible-username"
 export TFSTATE_BUCKET="your-original-s3-bucket-name-for-tfstate-backend"
 export TFSTATE_KEY="s3-file-prefix-of-tfstate-file/learn-terraform-aws-ec2-instance.tfstate"
 export TFSTATE_REGION="<s3-bucket-aws-region>"
